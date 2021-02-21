@@ -2,54 +2,54 @@ Guided Exploration No. 3 Snippets file.
 
 Snippet 1
 ================================
-# COMMENT THIS CODE
+# This imports the random library 
 import random
 
 Snippet 2
 ================================
-# COMMENT THIS CODE
+# This is a empty list to store all the rap names from rap-name.txt
 possible_names = []
 
 Snippet 3
 ================================
-# COMMENT THIS CODE
+# This open a new file and store all the new generated names from the code
 outputFile = open('rap-names-output.txt', 'w')
 
 Snippet 4
 ================================
-# COMMENT THIS CODE
+# This is used to open read access then it assigns a handle to file datafile 
 with open('rap-names.txt', 'r') as dataFile:
-    # COMMENT THIS CODE
+    # This is a for loop to iterate through the lines in rap-names.txt
     for name in dataFile:
-        # COMMENT THIS CODE
+        # This reads each a line and removes the invisible line feed at the end of each line, Then it appends to the possible names list
         possible_names.append(name.rstrip())
 
 Snippet 5
 ================================
-# COMMENT THIS CODE
+# This asks for how many rap names
 count = int(input('How many rap names would you like to create? '))
-# COMMENT THIS CODE
+# This asks for how many parts it contain
 parts = int(input('How many parts should the name contain? '))
 
 Snippet 6
 ================================
-# COMMENT THIS CODE
+# This counted loop is used to generate the amount that was asked for
 for i in range(count):
-    # COMMENT THIS CODE
+    # This is a empty list to hold the rap name parts
     name_parts = []
-    # COMMENT THIS CODE
+    # Another counted loop to iterate the number of rap names that was asked to be part of the names
     for j in range(parts):
-        # COMMENT THIS CODE
+        # This will append the names part to the list, there are two parameters to help generate a random number to get rap name from list 
         name_parts.append(possible_names[random.randint(0, len(possible_names)-1)])
 
 Snippet 7
 ================================
-# COMMENT THIS CODE
+# This writes out a name after it has been generated, also it takes the name parts list and glues them together with a space
 outputFile.write(f"{' '.join(name_parts)}\n")
-# COMMENT THIS CODE
+# This displays the output in the terminal
 print(f"{' '.join(name_parts)}")
 
 Snippet 8
 ================================
-# COMMENT THIS CODE
+# This will close the output file
 outputFile.close()
